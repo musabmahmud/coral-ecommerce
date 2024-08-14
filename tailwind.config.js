@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         "black-default": "#1E2832",
-        "primary-bg": "#1e28320d",
+        "primary-default": "#1e28320d",
       },
       fontFamily: {
         'open-sans': ['Open Sans', 'sans-serif'],
