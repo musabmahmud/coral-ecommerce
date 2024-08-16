@@ -24,7 +24,7 @@ const Navbar = () => {
 
 
     return (
-        <header className='max-w-screen-2xl lg:px-28 px-4 absolute top-0 right-0 left-0'>
+        <header className='xl:px-28 px-4 absolute top-0 right-0 left-0'>
             <div className='flex justify-between items-center lg:py-4 py-3 font-roboto'>
                 {/* Search bar */}
                 <FaSearch className='text-black-default w-5 h-5 cursor-pointer' />

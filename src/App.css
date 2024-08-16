@@ -1,24 +1,15 @@
-/* you can explore ans shop many differnt collection from various barands here.
+body {
+    font-family: "Roboto", sans-serif;
+}
 
-position: absolute;
-width: 682px;
-height: 119px;
-left: 304px;
-top: 406px;
+select::-ms-expand {
+    display: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
 
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 30px;
-line-height: 55px;
-/* or 183% */
-/* text-transform: capitalize; */
-
-/* Dark */
-/* color: #000000; */
-
-
-
-
-
-/* top-main */
+.title {
+    @apply text-3xl font-semibold capitalize text-center mb-8;
+}
