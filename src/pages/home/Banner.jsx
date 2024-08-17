@@ -6,7 +6,7 @@ const Banner = () => {
         <div className='bg-primary-default py-6 xl:px-28 px-4'>
             <div className='flex flex-col sm:flex-row-reverse items-center justify-between gap-14 py-28'>
                 <div className=''>
-                    <img src="./img/banner/1.png" alt="Collections" />
+                    <img src="img/banner/1.png" alt="Collections" />
                 </div>
                 <div className='font-roboto sm:font-light text-center sm:text-left sm:w-1/2'>
                     <h1 className='text-5xl lg:text-7xl mb-5'>Collections</h1>

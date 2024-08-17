@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom'
 
 
 const companyLogo = [
-    { id: 1, img: "./img/brand/1.png", title: "Brand Image" },
-    { id: 2, img: "./img/brand/2.png", title: "Brand Image" },
-    { id: 3, img: "./img/brand/3.png", title: "Brand Image" },
-    { id: 4, img: "./img/brand/4.png", title: "Brand Image" },
-    { id: 5, img: "./img/brand/5.png", title: "Brand Image" },
+    { id: 2, img: "img/brand/2.png", title: "Brand Image" },
+    { id: 1, img: "img/brand/1.png", title: "Brand Image" },
+    { id: 3, img: "img/brand/3.png", title: "Brand Image" },
+    { id: 4, img: "img/brand/4.png", title: "Brand Image" },
+    { id: 5, img: "img/brand/5.png", title: "Brand Image" },
 ]
 
 
 const categoryImages = [
-    { id: 0, img: "./img/category/1.png", title: "Brand Image" },
-    { id: 1, img: "./img/category/3.png", title: "Brand Image" },
-    { id: 2, img: "./img/category/4.png", title: "Brand Image" },
-    { id: 3, img: "./img/category/2.png", title: "Brand Image" },
-    { id: 4, img: "./img/category/5.png", title: "Brand Image" },
+    { id: 0, img: "img/category/1.png", title: "Brand Image" },
+    { id: 1, img: "img/category/3.png", title: "Brand Image" },
+    { id: 2, img: "img/category/4.png", title: "Brand Image" },
+    { id: 3, img: "img/category/2.png", title: "Brand Image" },
+    { id: 4, img: "img/category/5.png", title: "Brand Image" },
 ]
 
 const Category = () => {

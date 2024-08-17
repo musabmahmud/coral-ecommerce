@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 
 const instaImages = [
-    { id: 0, img: "./img/instagram/1.png", title: "Brand Image" },
-    { id: 1, img: "./img/instagram/2.png", title: "Brand Image" },
-    { id: 2, img: "./img/instagram/3.png", title: "Brand Image" },
-    { id: 3, img: "./img/instagram/4.png", title: "Brand Image" },
-    { id: 4, img: "./img/instagram/5.png", title: "Brand Image" },
-    { id: 5, img: "./img/instagram/6.png", title: "Brand Image" },
+    { id: 0, img: "img/instagram/1.png", title: "Brand Image" },
+    { id: 1, img: "img/instagram/2.png", title: "Brand Image" },
+    { id: 2, img: "img/instagram/3.png", title: "Brand Image" },
+    { id: 3, img: "img/instagram/4.png", title: "Brand Image" },
+    { id: 4, img: "img/instagram/5.png", title: "Brand Image" },
+    { id: 5, img: "img/instagram/6.png", title: "Brand Image" },
 ]
 
 

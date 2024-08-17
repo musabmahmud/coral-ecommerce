@@ -32,7 +32,7 @@ const SingleProduct = () => {
         }
 
         fetchData();
-    }, [])
+    }, [id])
 
     return (
         <section className='bg-primary-default max-w-screen-2xl mx-auto container xl:px-28 px-4 py-28'>
