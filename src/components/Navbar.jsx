@@ -5,13 +5,12 @@ import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser } from 'react-icons/fa
 const Navbar = () => {
 
     const navItems = [
-        { title: "Jewelry & Accessories", path: "/" },
-        { title: "Clothing & Shoes", path: "/" },
-        { title: "Home & Living", path: "/" },
-        { title: "Wedding & Party", path: "/" },
-        { title: "Toys & Entertainment", path: "/" },
-        { title: "Art & Collectibles", path: "/" },
-        { title: "Craft Supplies & Tools", path: "/" }
+        { title: "Home", path: "/" },
+        { title: "Shop", path: "/shop" },
+        { title: "Pages", path: "/cart" },
+        { title: "About", path: "" },
+        { title: "Blog", path: "/blog" },
+        { title: "Contact", path: "/contact" },
     ]
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +33,7 @@ const Navbar = () => {
                 {/* account and shopping btn  */}
                 <div className='text-lg text-black-default flex items-center gap-4'>
                     <a href="" className='flex items-center gap-2'><FaUser /> Account</a>
-                    <a href="" className='flex items-center gap-2'><FaShoppingBag /> Shopping</a>
+                    <a href="/cart" className='flex items-center gap-2'><FaShoppingBag /> Cart</a>
                 </div>
             </div>
             <hr />
@@ -49,11 +48,11 @@ const Navbar = () => {
 
             {/* category */}
             <nav className={`lg:py-4 ${isMenuOpen ? '' : 'hidden lg:block'}`}>
-                <ul className="lg:flex items-center justify-between text-black-default font-open-sans block text-center">
+                <ul className="lg:flex items-center justify-around text-black-default font-open-sans block text-center">
                     {
                         navItems.map(({ title, path }) => (
-                            <li key={title} className='hover:text-orange-500 py-3 lg:py-0 border-y-2 lg:border-none'>
-                                <Link to="/">{title}</Link>
+                            <li key={title} className='transition-default py-3 lg:py-0 border-y-2 lg:border-none font-semibold'>
+                                <Link to={path}>{title}</Link>
                             </li>
                         ))
                     }

@@ -42,7 +42,7 @@ const Category = () => {
                         {
                             categoryImages.map(({ id, img, title }) => (
                                 <div className={`${id === 0 ? 'row-span-2 col-span-2' : ''}`} key={id}>
-                                    <Link to={img} ><img className='object-cover w-full hover:scale-105 transition-all duration-200' src={img} alt={title} /></Link>
+                                    <Link to={img} ><img className='object-cover w-full hover:scale-105 transition-default' src={img} alt={title} /></Link>
                                 </div>
                             ))
                         }

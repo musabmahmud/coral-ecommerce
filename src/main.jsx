@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/home/Home.jsx';
+import SingleProduct from './pages/SingleProduct.jsx';
+import Shop from './pages/Shop.jsx';
 
 
 
@@ -21,6 +23,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
+      },
+      {
+        path: "/shop/:id",
+        element: <SingleProduct />
+      }
+      ,
+      {
+        path: "/shop",
+        element: <Shop />
       }
     ]
     // errorElement: <ErrorPage />,

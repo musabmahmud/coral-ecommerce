@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { FaFilter } from 'react-icons/fa'
-import Card from '../../components/Card';
+import Card from '../components/Card';
+import { Link } from 'react-router-dom';
 
-const Products = () => {
+const Shop = () => {
 
     const [products, setProducts] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
@@ -70,9 +71,9 @@ const Products = () => {
 
     return (
         <section>
-            <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4 mb-12'>
-                <div>
-                    <h2 className='title'>Or subscribe to the newsletter</h2>
+            <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4 mb-12 py-28'>
+                <div className="my-10">
+                    <a href="/" className='text-gray-500'>Home</a> / <a href="/Shop" className='font-semibold text-black'>Shop</a>
                 </div>
                 <div className='flex flex-col md:flex-row flex-wrap justify-between items-center space-y-3 mb-8'>
                     <div className="flex flex-row justify-start md:items-center md:gap-8 gap-4 flex-wrap">
@@ -98,8 +99,19 @@ const Products = () => {
                 </div>
                 <div className='grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 xl:gap-12'>
                     {
-                        filteredItems.slice(0, 8).map((product) => (
-                            <Card key={product.id} product={product} />
+                        filteredItems.map((product) => (
+                            <div key={product.id} className='shadow-sm rounded overflow-hidden'>
+                                <Link to={`${product.id}`}>
+                                    <img className='hover:scale-110 transition-all duration-300' src={product.image} alt={product.title} />
+                                </Link>
+                                <div className='py-4 px-4 font-open-sans'>
+                                    <h4 className="text-base open-sans font-semibold mb-2 ">{product.title}</h4>
+                                    <div className="flex justify-between items-center">
+                                        <p className='text-black-default/50'>{product.category}</p>
+                                        <p className='font-semibold'>${product.price}</p>
+                                    </div>
+                                </div>
+                            </div>
                         ))
                     }
                 </div>
@@ -108,4 +120,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default Shop

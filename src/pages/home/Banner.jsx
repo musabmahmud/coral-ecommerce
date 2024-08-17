@@ -12,7 +12,7 @@ const Banner = () => {
                     <h1 className='text-5xl lg:text-7xl mb-5'>Collections</h1>
                     <p className='sm:text-3xl mb-7 capitalize'>you can explore ans shop many differnt collection
                         from various barands here.</p>
-                    <button className='flex items-center gap-2 text-xl font-semibold bg-black-default hover:bg-orange-500 px-6 py-2 text-white rounded mx-auto sm:mx-0'><FaShoppingBag />Shop Now</button>
+                    <button className='flex items-center gap-2 text-xl font-semibold bg-black-default hover:bg-red-500 px-6 py-2 text-white rounded mx-auto sm:mx-0'><FaShoppingBag />Shop Now</button>
                 </div>
             </div>
         </div>

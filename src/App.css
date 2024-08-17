@@ -13,3 +13,7 @@ select::-ms-expand {
 .title {
     @apply text-3xl font-semibold capitalize text-center mb-8;
 }
+
+.transition-default{
+    @apply cursor-pointer hover:text-red-500 transition ease-in duration-200;
+}

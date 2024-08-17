@@ -10,7 +10,7 @@ const Card = ({ product }) => {
       <div className='py-4 px-4 font-open-sans'>
         <h4 className="text-base open-sans font-semibold mb-2 ">{product.title}</h4>
         <div className="flex justify-between items-center">
-          <p className='text-black-default'>{product.category}</p>
+          <p className='text-black-default/50'>{product.category}</p>
           <p className='font-semibold'>${product.price}</p>
         </div>
       </div>
