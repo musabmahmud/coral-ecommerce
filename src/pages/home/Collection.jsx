@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 const Collection = () => {
     return (
-        <section className="bg-[url('img/collection/background.png')]  bg-cover bg-center bg-no-repeat xl:px-28 px-4 my-20">
+        <section className={`bg-[url('/img/collection/background.png')]  bg-cover bg-center bg-no-repeat xl:px-28 px-4 my-20`}>
             <div className='h-[580px] flex md:flex-row md:justify-between items-center'>
                 <div className='md:w-1/2 hidden md:block'>
                 </div>
