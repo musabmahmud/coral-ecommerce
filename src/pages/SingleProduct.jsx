@@ -7,10 +7,7 @@ const SingleProduct = () => {
     let { id } = useParams();
     const [product, setProduct] = useState([]);
 
-    useEffect(() => {
-        // Scroll to the top when the component mounts
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, []);
+    console.log(`Paise:${id}`);
 
     // fetching data from json 
     useEffect(() => {
@@ -19,12 +16,14 @@ const SingleProduct = () => {
                 const response = await fetch("../../public/products.json");
                 const data = await response.json();
 
-                // console.log(data);
+                console.log(data);
 
                 let selectedItem = data.filter(product => product.id == id);
 
-                console.log(selectedItem);
+                console.log(selectedItem[0]);
                 setProduct(selectedItem[0]);
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
 
             } catch (error) {
                 console.log("Error Fetching Data", error);
@@ -32,7 +31,7 @@ const SingleProduct = () => {
         }
 
         fetchData();
-    }, [id])
+    }, [id]);
 
     return (
         <section className='bg-primary-default max-w-screen-2xl mx-auto container xl:px-28 px-4 py-28'>
