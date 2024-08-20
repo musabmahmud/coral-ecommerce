@@ -10,8 +10,8 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/home/Home.jsx';
-import SingleProduct from './pages/SingleProduct.jsx';
-import Shop from './pages/Shop.jsx';
+import SingleProduct from './pages/home/SingleProduct.jsx';
+import Shop from './pages/home/Shop.jsx';
 
 
 

@@ -10,15 +10,38 @@ const SingleProduct = () => {
     console.log(`Paise:${id}`);
 
     // fetching data from json 
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch('./products.json');
+    //             const data = await response.json();
+
+    //             console.log(data);
+
+    //             let selectedItem = data.filter(product => product.id == id);
+
+    //             console.log(selectedItem[0]);
+    //             setProduct(selectedItem[0]);
+
+    //             // window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    //         } catch (error) {
+    //             console.log("Error Fetching Data", error);
+    //         }
+    //     }
+
+    //     fetchData();
+    // }, [id]);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("../../public/products.json");
+                const response = await fetch('../../../public/products.json');
                 const data = await response.json();
 
                 console.log(data);
 
-                let selectedItem = data.filter(product => product.id == id);
+                let selectedItem = data.filter(p => p.id == id);
 
                 console.log(selectedItem[0]);
                 setProduct(selectedItem[0]);
@@ -31,7 +54,7 @@ const SingleProduct = () => {
         }
 
         fetchData();
-    }, [id]);
+    }, [id])
 
     return (
         <section className='bg-primary-default max-w-screen-2xl mx-auto container xl:px-28 px-4 py-28'>

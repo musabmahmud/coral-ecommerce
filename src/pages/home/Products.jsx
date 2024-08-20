@@ -15,6 +15,7 @@ const Products = () => {
             try {
                 const response = await fetch("products.json");
                 const data = await response.json();
+
                 setProducts(data);
                 setFilteredItems(data);
 
