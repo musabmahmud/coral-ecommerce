@@ -7,43 +7,14 @@ const SingleProduct = () => {
     let { id } = useParams();
     const [product, setProduct] = useState([]);
 
-    console.log(`Paise:${id}`);
-
-    // fetching data from json 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await fetch('./products.json');
-    //             const data = await response.json();
-
-    //             console.log(data);
-
-    //             let selectedItem = data.filter(product => product.id == id);
-
-    //             console.log(selectedItem[0]);
-    //             setProduct(selectedItem[0]);
-
-    //             // window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    //         } catch (error) {
-    //             console.log("Error Fetching Data", error);
-    //         }
-    //     }
-
-    //     fetchData();
-    // }, [id]);
-
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch('/products.json');
                 const data = await response.json();
 
-                console.log(data);
-
                 let selectedItem = data.filter(p => p.id == id);
 
-                console.log(selectedItem[0]);
                 setProduct(selectedItem[0]);
 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
