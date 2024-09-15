@@ -11,7 +11,11 @@ import {
 
 import Home from './pages/home/Home.jsx';
 import SingleProduct from './pages/home/SingleProduct.jsx';
-import Shop from './pages/home/Shop.jsx';
+import Shop from './pages/Shop.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
+import Blog from './pages/Blog.jsx';
+import Cart from './pages/Cart.jsx';
 
 
 
@@ -23,15 +27,31 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
-      },
-      {
-        path: "/shop/:id",
-        element: <SingleProduct />
       }
       ,
       {
         path: "/shop",
         element: <Shop />
+      },
+      {
+        path: "/product/:id",
+        element: <SingleProduct />
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       }
     ]
     // errorElement: <ErrorPage />,

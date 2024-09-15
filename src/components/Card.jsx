@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Card = ({ product }) => {
   return (
     <div className='shadow-sm rounded overflow-hidden'>
-      <Link to={`shop/${product.id}`}>
+      <Link to={`../product/${product.id}`}>
         <img className='hover:scale-110 transition-all duration-300' src={product.image} alt={product.title} />
       </Link>
       <div className='py-4 px-4 font-open-sans'>
