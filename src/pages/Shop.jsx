@@ -36,14 +36,6 @@ const Shop = () => {
         setSelectedCategory(category);
     }
 
-    //Sort Products
-
-    const showAll = () => {
-        setFilteredItems(products);
-        selectedCategory("all");
-    }
-
-
     // Sorting Functionality 
 
     const handleSortChange = (option) => {
@@ -71,17 +63,17 @@ const Shop = () => {
 
     return (
         <section className='max-w-screen-2xl mx-auto container xl:px-28 px-4 py-5'>
-            <div className="bg-gray-100 my-5 py-5 pl-5 rounded flex justify-left items-center gap-3">
-                <Link to="/" className='text-gray-500'><FaHome size="20" /></Link> / <Link to="/Shop" className='font-semibold text-red-600 uppercase'>Shop</Link>
+            <div className="bg-gray-100 my-5 py-12 pl-8 rounded flex justify-left items-center gap-3">
+                <Link to="/" className='text-gray-500'><FaHome size="20" /></Link> / <Link to="/Shop" className='font-semibold text-black uppercase'>Shop</Link>
             </div>
-            <div className='flex flex-col md:flex-row flex-wrap justify-between items-center space-y-3 mb-8'>
+            <div className='flex flex-row justify-between items-center space-y-3 mb-8'>
                 <div className="flex flex-row justify-start md:items-center md:gap-8 gap-4 flex-wrap">
-                    <button onClick={showAll}>All Products</button>
-                    <button onClick={() => filterItems("Dress")}>Clothing</button>
-                    <button onClick={() => filterItems("Hoodies")}>Hoodies</button>
-                    <button onClick={() => filterItems("Bag")}>Bag</button>
-                    <button onClick={() => filterItems("Glasses")}>Glasses</button>
-                    <button onClick={() => filterItems("Shoe")}>Shoe</button>
+                    <button className={`button-default ${selectedCategory == 'all' ? 'active' : ''}`} onClick={() => filterItems("all")}>All Products</button>
+                    <button className={`button-default ${selectedCategory == 'Dress' ? 'active' : ''}`} onClick={() => filterItems("Dress")}>Clothing</button>
+                    <button className={`button-default ${selectedCategory == 'Hoodies' ? 'active' : ''}`} onClick={() => filterItems("Hoodies")}>Hoodies</button>
+                    <button className={`button-default ${selectedCategory == 'Bag' ? 'active' : ''}`} onClick={() => filterItems("Bag")}>Bag</button>
+                    <button className={`button-default ${selectedCategory == 'Glasses' ? 'active' : ''}`} onClick={() => filterItems("Glasses")}>Glasses</button>
+                    <button className={`button-default ${selectedCategory == 'Shoe' ? 'active' : ''}`} onClick={() => filterItems("Shoe")}>Shoe</button>
                 </div>
                 <div className='flex justify-end mb-4 rounded-sm'>
                     <div className='bg-black p-2'>

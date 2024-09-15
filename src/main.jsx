@@ -1,9 +1,8 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider, useDispatch } from 'react-redux';
 
-import './index.css'
-
+import store from './store/store.js';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -18,6 +17,14 @@ import Blog from './pages/Blog.jsx';
 import Cart from './pages/Cart.jsx';
 
 
+// CSS FILES 
+
+import App from './App.jsx';
+import './index.css';
+import { productsFetch } from './features/productSlice.js';
+
+
+store.dispatch(productsFetch(1));
 
 const router = createBrowserRouter([
   {
@@ -58,6 +65,9 @@ const router = createBrowserRouter([
   },
 ]);
 
+
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />,
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>,
 )

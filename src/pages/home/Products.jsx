@@ -36,14 +36,6 @@ const Products = () => {
         setSelectedCategory(category);
     }
 
-    //Sort Products
-
-    const showAll = () => {
-        setFilteredItems(products);
-        selectedCategory("all");
-    }
-
-
     // Sorting Functionality 
 
     const handleSortChange = (option) => {
@@ -75,16 +67,14 @@ const Products = () => {
                 <div>
                     <h2 className='title'>Or subscribe to the newsletter</h2>
                 </div>
-                <div className='flex flex-col md:flex-row flex-wrap justify-between items-center space-y-3 mb-8'>
-                    <div className="flex flex-row justify-start md:items-center md:gap-8 gap-4 flex-wrap">
-                        <button onClick={showAll}>All Products</button>
-                        <button onClick={() => filterItems("Dress")}>Clothing</button>
-                        <button onClick={() => filterItems("Hoodies")}>Hoodies</button>
-                        <button onClick={() => filterItems("Bag")}>Bag</button>
-                        <button onClick={() => filterItems("Glasses")}>Glasses</button>
-                        <button onClick={() => filterItems("Shoe")}>Shoe</button>
-                    </div>
-                    <div className='flex justify-end mb-4 rounded-sm'>
+                <div className='flex flex-row justify-center md:items-center md:gap-8 gap-4 flex-wrap my-10'>
+                    <button className={`button-default ${selectedCategory == 'all' ? 'active' : ''}`} onClick={() => filterItems("all")}>All Products</button>
+                    <button className={`button-default ${selectedCategory == 'Dress' ? 'active' : ''}`} onClick={() => filterItems("Dress")}>Clothing</button>
+                    <button className={`button-default ${selectedCategory == 'Hoodies' ? 'active' : ''}`} onClick={() => filterItems("Hoodies")}>Hoodies</button>
+                    <button className={`button-default ${selectedCategory == 'Bag' ? 'active' : ''}`} onClick={() => filterItems("Bag")}>Bag</button>
+                    <button className={`button-default ${selectedCategory == 'Glasses' ? 'active' : ''}`} onClick={() => filterItems("Glasses")}>Glasses</button>
+                    <button className={`button-default ${selectedCategory == 'Shoe' ? 'active' : ''}`} onClick={() => filterItems("Shoe")}>Shoe</button>
+                    {/* <div className='flex justify-end mb-4 rounded-sm'>
                         <div className='bg-black p-2'>
                             <FaFilter className='text-white h-4 w-4' />
                         </div>
@@ -95,7 +85,7 @@ const Products = () => {
                             <option value="low-to-high">Low to High</option>
                             <option value="high-to-low">High to Low</option>
                         </select>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 xl:gap-12'>
                     {

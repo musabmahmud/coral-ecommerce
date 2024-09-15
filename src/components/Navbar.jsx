@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser } from 'react-icons/fa';
 
@@ -18,11 +18,23 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     }
 
+    const [position, setPosition] = useState(false)
+
+    // useEffect(() => {
+    //     document.addEventListener("scroll", e => {
+    //         let scrolled = document.scrollingElement.scrollBottom;
+    //         if (scrolled > 500) {
+    //             setPosition(!position)
+    //         } else {
+    //             setPosition(!position)
+    //         }
+    //     })
+    // }, [position])
 
 
 
     return (
-        <header className='xl:px-28 px-4 relative'>
+        <header className={`xl:px-28 px-4 top-0 right-0 left-0 ${position ? 'fixed' : 'relative'} z-20 bg-white`}>
             <div className='flex justify-between items-center lg:py-4 py-3 font-roboto'>
                 {/* Search bar */}
                 <FaSearch className='text-black-default w-5 h-5 cursor-pointer' />

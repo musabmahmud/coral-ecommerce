@@ -4,8 +4,6 @@ body {
 
 select::-ms-expand {
     display: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
 }
@@ -14,6 +12,20 @@ select::-ms-expand {
     @apply text-3xl font-semibold capitalize text-center mb-8;
 }
 
-.transition-default{
-    @apply cursor-pointer hover:text-red-500 transition ease-in duration-200;
+.transition-default {
+    @apply cursor-pointer transition ease-in duration-200;
+}
+
+.transition-default:hover {
+    @apply text-black;
+}
+
+
+.button-default {
+    @apply cursor-pointer py-2 px-4 bg-white text-black shadow transition-all ease-in-out duration-500 rounded-md;
+}
+
+.button-default:hover,
+.button-default.active {
+    @apply bg-black text-white;
 }
