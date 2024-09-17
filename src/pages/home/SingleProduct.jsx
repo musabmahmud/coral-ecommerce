@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { FaArrowAltCircleRight, FaHome, FaStar } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import RelatedProduct from './RelatedProduct';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../features/cartSlice';
+import { Bounce, toast } from 'react-toastify';
 
 const SingleProduct = () => {
 
@@ -18,6 +21,9 @@ const SingleProduct = () => {
 
                 setProduct(selectedItem[0]);
 
+                const quantity = document.getElementById('quantity');
+                quantity.value = 1;
+
                 window.scrollTo({ top: 200, behavior: 'smooth' });
 
             } catch (error) {
@@ -27,6 +33,27 @@ const SingleProduct = () => {
 
         fetchData();
     }, [id]);
+
+    const dispatch = useDispatch();
+
+    const handleToAddCart = (product) => {
+        const quantity = document.getElementById('quantity');
+        product = { ...product, cartQuantity: quantity.value };
+        dispatch(addToCart(product));
+
+        toast.success(`${product?.title}
+            Successfully added to Cart`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "light",
+            transition: Bounce,
+        });
+    }
+
 
     return (
         <div className="p-3 max-w-7xl m-auto">
@@ -53,7 +80,7 @@ const SingleProduct = () => {
                                 <input type="number" name='quantity' min={1} id='quantity' defaultValue={1} required className='border border-gray-300 text-sm font-semibold mb-1 outline-none rounded-md m-0 py-3 px-4 focus:border-red-500' />
                             </div>
                             <div className='w-full text-left mt-10 mb-4'>
-                                <button className='flex justify-center items-center gap-2 py-3 px-4 bg-red-500 text-white font-bold border border-red-500 rounded-sm ease-in-out duration-200 shadow shadow-slate-600 hover:bg-white hover:text-red-500 lg:m-0 md:px-6'><span>Add to Cart</span> <FaArrowAltCircleRight /></button>
+                                <button onClick={() => handleToAddCart(product)} className='flex justify-center items-center gap-2 py-3 px-4 bg-black text-white font-bold shadow rounded-sm ease-in-out duration-200 hover:bg-white hover:text-black lg:m-0 md:px-6'><span>Add to Cart</span> <FaArrowAltCircleRight /></button>
                             </div>
                         </div>
                     </div>

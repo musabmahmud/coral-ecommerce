@@ -49,7 +49,7 @@ const Navbar = () => {
             </div>
             <hr />
             <div className='flex justify-between items-center py-3 lg:hidden'>
-                <a href="/" className='flex justify-center'><img src="./logo.png" alt="Coral" /></a>
+                <a href="/" className='flex justify-center'><img src="/logo.png" alt="Coral" /></a>
                 <button>
                     {
                         isMenuOpen ? <FaTimes className='w-5 h-5 text-black-default' onClick={toggleMenu} /> : <FaBars className='w-5 h-5 text-black-default' onClick={toggleMenu} />

@@ -24,7 +24,7 @@ import './index.css';
 import { productsFetch } from './features/productSlice.js';
 
 
-store.dispatch(productsFetch(1));
+// store.dispatch(productsFetch(1));
 
 const router = createBrowserRouter([
   {
