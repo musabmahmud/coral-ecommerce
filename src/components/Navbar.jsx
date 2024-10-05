@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+    const { cartQuantity } = useSelector(state => state.cart);
 
     const navItems = [
         { title: "Home", path: "/" },
@@ -42,9 +45,9 @@ const Navbar = () => {
                 <a href="/" className='hidden lg:block'><img src="/logo.png" alt="Coral" /></a>
 
                 {/* account and shopping btn  */}
-                <div className='text-lg text-black-default flex items-center gap-4'>
+                <div className='text-lg text-black-default flex items-center gap-4 relative'>
                     <Link to="/account" className='flex items-center gap-2'><FaUser /> Account</Link>
-                    <Link to="/cart" className='flex items-center gap-2'><FaShoppingBag /> Cart</Link>
+                    <Link to="/cart" className='flex items-center gap-2 relative'><FaShoppingBag /> Cart</Link><span className='absolute right-9 top-3 text-[12px] bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center'>{cartQuantity}</span>
                 </div>
             </div>
             <hr />

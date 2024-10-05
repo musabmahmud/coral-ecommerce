@@ -1,15 +1,23 @@
 import React, { useEffect } from 'react'
-import { FaArrowAltCircleLeft, FaHome } from 'react-icons/fa'
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaHome } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { cartQuantityDecrement, cartQuantityIncrement, clearCart, removeFromCart } from '../features/cartSlice'
+import { cartQuantityDecrement, cartQuantityIncrement, clearCart, getTotal, removeFromCart } from '../features/cartSlice'
 import { Bounce, toast } from 'react-toastify'
 
 const Cart = () => {
 
+
+
+
     const cart = useSelector((state) => state.cart);
 
     const dispatch = useDispatch();
+
+
+    useEffect(() => {
+        dispatch(getTotal());
+    }, [cart, dispatch])
 
     const handleRemoveFromCart = (cart) => {
 
@@ -151,10 +159,20 @@ const Cart = () => {
                     <div className='mb-5'>
                         <button onClick={clearAllCart} className='bg-red-500 px-4 py-2 rounded text-white w-full'>Clear Cart</button>
                     </div>
-                    <div className="flex justify-between border shadow-sm rounded bg-slate-50 p-4">
-                        <span>Subtotal:  </span><span className='font-bold'>$999</span>
+                    <div >
+                        <div className="flex justify-between border shadow-sm rounded bg-slate-50 p-4"><span>Subtotal:  </span><span className='font-bold'>${Math.round(cart.cartTotal)}</span>
+                        </div>
+                        <div className="flex justify-between border shadow-sm rounded bg-slate-50 p-4">
+                            <span>Delivery Fee:  </span>
+                            <span className='font-bold'>${Math.round(cart.deliveryFee)}</span>
+                        </div>
+                        <div className="flex justify-between border shadow-sm rounded bg-slate-50 p-4 mt-10">
+                            <span>Total:  </span>
+                            <span className='font-bold'>${Math.round(cart.deliveryFee + cart.cartTotal)}</span>
+                        </div>
+                        
                     </div>
-                    <Link to='/shop' className='mt-5 px-4 py-2 rounded w-full flex justify-end items-center gap-2'><FaArrowAltCircleLeft /> Continue to Shopping</Link>
+                    <Link to='/checkout' className='mt-5 px-4 py-2 rounded w-full flex justify-end items-center gap-2'>Process to Checkout <FaArrowAltCircleRight /></Link>
                 </div>
             </div>
         </section>
@@ -162,3 +180,4 @@ const Cart = () => {
 }
 
 export default Cart
+

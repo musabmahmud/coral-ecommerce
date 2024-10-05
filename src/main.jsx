@@ -22,9 +22,12 @@ import Cart from './pages/Cart.jsx';
 import App from './App.jsx';
 import './index.css';
 import { productsFetch } from './features/productSlice.js';
+import { getTotal } from './features/cartSlice.js';
 
 
 // store.dispatch(productsFetch(1));
+
+store.dispatch(getTotal());
 
 const router = createBrowserRouter([
   {
